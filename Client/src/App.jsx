@@ -10,8 +10,11 @@ import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 // import Body from './Components/Body/Body'
 // import AllWidgets from './pages/AllWidgets'
+import { FaPlus } from "react-icons/fa";
 import { FaPlusCircle } from "react-icons/fa";
 import { FaCircleMinus } from "react-icons/fa6";
+import { FaMinus } from "react-icons/fa";
+
 import Pomodoro from './Components/pomodoro/Pomodoro'
 import Calender from './Components/Calender/Calender';
 import Quote from './Components/Quote/Quote';
@@ -28,30 +31,26 @@ import TrackIssue from './Components/Issue/TrackIssue';
 
 // eslint-disable-next-line react/prop-types
 const ToggleComponent = ({ componentName }) => {
-  // Initialize state from localStorage or default to true
   const [isVisible, setIsVisible] = useState(
     JSON.parse(localStorage.getItem(componentName)) ?? true
   );
 
   useEffect(() => {
-    // Store state in localStorage whenever it changes
     localStorage.setItem(componentName, JSON.stringify(isVisible));
   }, [isVisible, componentName]);
 
   return (
-    <div className='px-5 py-3 text-md border-2 border-collapse'>
-      <button className='flex flex-row gap-2 items-center' onClick={() => setIsVisible(!isVisible)}>
-        {isVisible ? <FaCircleMinus /> : <FaPlusCircle />}
+    <div className='px-5 py-2 text-sm rounded-lg mb-2 poppins-medium border-2 border-collapse'>
+      <button className='flex flex-row justify-between w-full gap-2 items-center' onClick={() => setIsVisible(!isVisible)}>
         {componentName}
+        {isVisible ? <FaMinus /> : <FaPlus />}
       </button>
-      {isVisible && <div>{componentName} Content</div>}
     </div>
   );
 };
 
 function App() {
-  const components = ['Google Slide', 'Pomodoro Timer', 'Spotify', 'Poll', 'Google Calender', 'Google Sheet', 'Google Form', 'Quote'];
-  const icons = [<FaCircleMinus />, <FaCircleMinus />];
+  const components = ['Google Slide', 'Pomodoro Timer', 'Quote', 'Songs', 'Daily Growth Checklist', 'Step Count', 'Calendar', 'Google Spreadsheet', 'Google Forms', 'Poll', 'Chat Bot', 'News Feed', 'Issue Tracker', ];
   return (
     <div className=''>
       <Navbar />
@@ -65,10 +64,6 @@ function App() {
               <ToggleComponent key={name} componentName={name} />
             ))}
           </div>
-          {/* <div> */}
-          {/* <Pomodoro /> */}
-          {/* <Calender /> */}
-          {/* </div> */}
         </div>
 
         {/* Part 2 */}
@@ -78,7 +73,6 @@ function App() {
               className="h-full w-full rounded-lg"
             ></iframe>
           </div>
-          {/* <div className='min-w-[32%] h-[80%] rounded-xl border border-purple-600'>p1</div> */}
           <div className='w-[32%] h-[80%] rounded-xl flex flex-col gap-5 justify-between'>
             <div className='w-full h-1/2 rounded-xl border-2 shadow-lg bg-white overflow-hidden'>
               <Pomodoro />
