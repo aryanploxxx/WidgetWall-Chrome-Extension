@@ -19,7 +19,7 @@ import CreateIssue from './Components/Issue/CreateIssue';
 import TrackIssue from './Components/Issue/TrackIssue';
 import FloatingEmoji from './Components/FloatingEmoji/FloatingEmoji';
 import Sidebar from './Components/Sidebar/Sidebar';
-import GoogleSlide from './Components/googleslide/GoogleSlide';
+import GoogleSlide from './Components/GoogleSlide/GoogleSlide';
 // eslint-disable-next-line react/prop-types
 
 function App() {
