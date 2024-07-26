@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
 
+// eslint-disable-next-line react/prop-types
 function Poll({ question, options }) {
   const [selectedOption, setSelectedOption] = useState('');
   const [results, setResults] = useState(options.reduce((acc, option) => ({ ...acc, [option]: Math.floor(Math.random() * 10) }), {})); // Random initial data
@@ -66,14 +68,16 @@ function PollsContainer() {
   ];
 
   return (
-    <div className="space-y-4">
-      {polls.map((poll, index) => (
-        <Poll
-          key={index}
-          question={poll.question}
-          options={poll.options}
-        />
-      ))}
+    <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+      <div className="space-y-4">
+        {polls.map((poll, index) => (
+          <Poll
+            key={index}
+            question={poll.question}
+            options={poll.options}
+          />
+        ))}
+      </div>
     </div>
   );
 }

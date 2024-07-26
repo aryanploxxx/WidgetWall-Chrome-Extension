@@ -1,6 +1,6 @@
 // sk-proj-74y4wbu0iXlg2DgvSIDGT3BlbkFJgJnCaghDPrb5wWuY23Dn
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 const OPENAI_API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions'; // Replace with the desired model endpoint
@@ -50,31 +50,33 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="m-4 p-4  w-80">
-      <div className="h-80 overflow-y-scroll mb-4 p-2 border border-gray-300 rounded-lg">
-        {messages.map((msg, index) => (
-          <div key={index} className={`mb-2 ${msg.sender === 'bot' ? 'text-blue-500' : 'text-green-500'}`}>
-            <div className={`p-2 rounded-lg ${msg.sender === 'bot' ? 'bg-blue-100' : 'bg-green-100'}`}>
-              {msg.text}
+    <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+      <div className="m-4 p-4  w-80">
+        <div className="h-80 overflow-y-scroll mb-4 p-2 border border-gray-300 rounded-lg">
+          {messages.map((msg, index) => (
+            <div key={index} className={`mb-2 ${msg.sender === 'bot' ? 'text-blue-500' : 'text-green-500'}`}>
+              <div className={`p-2 rounded-lg ${msg.sender === 'bot' ? 'bg-blue-100' : 'bg-green-100'}`}>
+                {msg.text}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="flex">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="Type a message..."
-          className="flex-1 border border-gray-300 p-2 rounded-lg"
-        />
-        <button
-          onClick={handleSendMessage}
-          className="ml-2 bg-blue-500 text-white px-4 py-2 rounded-lg"
-        >
-          Send
-        </button>
+          ))}
+        </div>
+        <div className="flex">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Type a message..."
+            className="flex-1 border border-gray-300 p-2 rounded-lg"
+          />
+          <button
+            onClick={handleSendMessage}
+            className="ml-2 bg-blue-500 text-white px-4 py-2 rounded-lg"
+          >
+            Send
+          </button>
+        </div>
       </div>
     </div>
   );

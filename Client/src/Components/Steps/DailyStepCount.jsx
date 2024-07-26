@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
@@ -50,10 +49,12 @@ const DailyStepCount = () => {
   };
 
   return (
-    <div className="text-center px-8 ">
-      <h1 className="text-3xl font-bold mb-6">Daily Step Count</h1>
-      <div className="w-full max-w-lg mx-auto">
-        <Bar data={data} options={options} height={280} />
+    <div className='w-[33%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+      <div className="text-center px-8 ">
+        <h1 className="text-3xl font-bold mb-6">Daily Step Count</h1>
+        <div className="w-full max-w-lg mx-auto">
+          <Bar data={data} options={options} height={280} />
+        </div>
       </div>
     </div>
   );

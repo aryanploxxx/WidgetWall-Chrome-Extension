@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Play, Pause } from 'lucide-react';
 
 const Player = () => {
@@ -40,7 +40,7 @@ const Player = () => {
   };
 
   return (
-    // <div className="h-full flex justify-center items-start overflow-auto p-4">
+    <div className='w-[32%] p-5 rounded-xl border bg-white flex justify-center items-center shadow-lg'>
       <div className="w-full max-w-sm">
         <div className="mb-3">
           <iframe
@@ -83,7 +83,7 @@ const Player = () => {
           ))}
         </div>
       </div>
-    // </div>
+    </div>
 
   );
 };

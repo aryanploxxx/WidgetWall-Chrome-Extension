@@ -18,16 +18,18 @@ function CustomCalendar() {
   };
 
   return (
-    <div className="max-w-md mx-auto rounded">
-      <header className="mb-4">
-        <h1 className="text-xl font-bold text-center">{format(date, 'MMMM yyyy')}</h1>
-      </header>
-      <Calendar
-        onChange={handleDateChange}
-        value={date}
-        tileClassName={tileClassName}
-        className="react-calendar border-none" // Remove border
-      />
+    <div className='w-[32%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+      <div className="max-w-md mx-auto rounded">
+        <header className="mb-4">
+          <h1 className="text-xl font-bold text-center">{format(date, 'MMMM yyyy')}</h1>
+        </header>
+        <Calendar
+          onChange={handleDateChange}
+          value={date}
+          tileClassName={tileClassName}
+          className="react-calendar border-none" // Remove border
+        />
+      </div>
     </div>
   );
 }

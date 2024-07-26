@@ -65,81 +65,83 @@ const Pomodoro = () => {
   };
 
   return (
-    <div className="pomodoro-container w-full h-full flex flex-col items-center justify-center">
-      
-      <div className="content">
-        <div id="pomo" className={showSettings ? 'hide' : ''}>
-        <div id="tab-holder">
-        <div id="tab">{tab}</div>
-      </div>
-          <div id="time">{formatTime(time)}</div>
-          <div >
-            <button onClick={toggleTimer} className="ctrl-btn" style={{ marginRight: '1rem' }}>
-              {isActive ? 'Pause' : 'Start'}
-            </button>
-            <button onClick={resetTimer} className="ctrl-btn">
-              Reset
-            </button>
-          </div>
+    <div className='w-full h-1/2 rounded-xl border-2 shadow-lg bg-white overflow-hidden'>
+      <div className="pomodoro-container w-full h-full flex flex-col items-center justify-center">
+        
+        <div className="content">
+          <div id="pomo" className={showSettings ? 'hide' : ''}>
+          <div id="tab-holder">
+          <div id="tab">{tab}</div>
         </div>
-        <div id="settings" className={showSettings ? 'show' : ''}>
-          <div className="settings-header">
-            {/* <h3>Settings</h3> */}
-            {/* <button
-          onClick={() => setShowSettings(false)}
-          className="close-btn material-symbols-outlined"
-        >
-          close
-        </button> */}
-          </div>
-          <div style={{ padding: '0px 0 0 0' }}>
-            <button onClick={handleSetDurations} className="settings-element">
-              Set Durations
-            </button>
-          </div>
-          <div id="duration-inputs">
-            <div className="input-group">
-              <label htmlFor="work-input">Work</label>
-              <input
-                type="number"
-                id="work-input"
-                className="settings-element time-input"
-                value={workDuration}
-                onChange={(e) => setWorkDuration(parseInt(e.target.value))}
-              />
-            </div>
-            <div className="input-group">
-              <label htmlFor="shortbreak-input">Short Break</label>
-              <input
-                type="number"
-                id="shortbreak-input"
-                className="settings-element time-input"
-                value={shortBreakDuration}
-                onChange={(e) => setShortBreakDuration(parseInt(e.target.value))}
-              />
-            </div>
-            <div className="input-group">
-              <label htmlFor="longbreak-input">Long Break</label>
-              <input
-                type="number"
-                id="longbreak-input"
-                className="settings-element time-input"
-                value={longBreakDuration}
-                onChange={(e) => setLongBreakDuration(parseInt(e.target.value))}
-              />
+            <div id="time">{formatTime(time)}</div>
+            <div >
+              <button onClick={toggleTimer} className="ctrl-btn" style={{ marginRight: '1rem' }}>
+                {isActive ? 'Pause' : 'Start'}
+              </button>
+              <button onClick={resetTimer} className="ctrl-btn">
+                Reset
+              </button>
             </div>
           </div>
-          
-        </div>
-        <button
-          onClick={() => setShowSettings(!showSettings)}
-          id="settings-btn"
-          className="ctrl-btn material-symbols-outlined"
-          style={{width:'2rem'}}
-        >
-                    {showSettings ? <X size={24} /> : <Settings size={24} />}
+          <div id="settings" className={showSettings ? 'show' : ''}>
+            <div className="settings-header">
+              {/* <h3>Settings</h3> */}
+              {/* <button
+            onClick={() => setShowSettings(false)}
+            className="close-btn material-symbols-outlined"
+          >
+            close
+          </button> */}
+            </div>
+            <div style={{ padding: '0px 0 0 0' }}>
+              <button onClick={handleSetDurations} className="settings-element">
+                Set Durations
+              </button>
+            </div>
+            <div id="duration-inputs">
+              <div className="input-group">
+                <label htmlFor="work-input">Work</label>
+                <input
+                  type="number"
+                  id="work-input"
+                  className="settings-element time-input"
+                  value={workDuration}
+                  onChange={(e) => setWorkDuration(parseInt(e.target.value))}
+                />
+              </div>
+              <div className="input-group">
+                <label htmlFor="shortbreak-input">Short Break</label>
+                <input
+                  type="number"
+                  id="shortbreak-input"
+                  className="settings-element time-input"
+                  value={shortBreakDuration}
+                  onChange={(e) => setShortBreakDuration(parseInt(e.target.value))}
+                />
+              </div>
+              <div className="input-group">
+                <label htmlFor="longbreak-input">Long Break</label>
+                <input
+                  type="number"
+                  id="longbreak-input"
+                  className="settings-element time-input"
+                  value={longBreakDuration}
+                  onChange={(e) => setLongBreakDuration(parseInt(e.target.value))}
+                />
+              </div>
+            </div>
+            
+          </div>
+          <button
+            onClick={() => setShowSettings(!showSettings)}
+            id="settings-btn"
+            className="ctrl-btn material-symbols-outlined"
+            style={{width:'2rem'}}
+          >
+                      {showSettings ? <X size={24} /> : <Settings size={24} />}
 
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   );

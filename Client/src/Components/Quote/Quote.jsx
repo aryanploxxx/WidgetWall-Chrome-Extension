@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const MotivationalQuotes = () => {
@@ -31,25 +31,27 @@ const MotivationalQuotes = () => {
   }
 
   return (
-    <div className="text-center p-4 px-8">
-      <h1 className="text-2xl font-bold mb-4">Motivational Quotes</h1>
-      <blockquote className="text-md italic mb-4">
-        &quot;{quotes[currentIndex].text}&quot;
-      </blockquote>
-      <p className="text-md mb-2">- {quotes[currentIndex].author.split(",")[0] || 'Unknown'}</p>
-      <div>
-        <button
-          onClick={prevQuote}
-          className="text-blue-500 bg-white px-4 py-2 rounded mr-2 hover:bg-blue-600 hover:text-white"
-        >
-          Previous
-        </button>
-        <button
-          onClick={nextQuote}
-          className="text-blue-500 bg-white px-4 py-2 rounded hover:bg-blue-600 hover:text-white"
-        >
-          Next
-        </button>
+    <div className='w-full h-1/2 rounded-xl bg-[#5d7dfc] text-white'>
+      <div className="text-center p-4 px-8">
+        <h1 className="text-2xl font-bold mb-4">Motivational Quotes</h1>
+        <blockquote className="text-md italic mb-4">
+          &quot;{quotes[currentIndex].text}&quot;
+        </blockquote>
+        <p className="text-md mb-2">- {quotes[currentIndex].author.split(",")[0] || 'Unknown'}</p>
+        <div>
+          <button
+            onClick={prevQuote}
+            className="text-blue-500 bg-white px-4 py-2 rounded mr-2 hover:bg-blue-600 hover:text-white"
+          >
+            Previous
+          </button>
+          <button
+            onClick={nextQuote}
+            className="text-blue-500 bg-white px-4 py-2 rounded hover:bg-blue-600 hover:text-white"
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
