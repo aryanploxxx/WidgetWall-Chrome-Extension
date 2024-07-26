@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const BACKEND_API_URL = 'http://localhost:5000/api/news'; // URL of your backend endpoint
+const BACKEND_API_URL = 'https://sea-turtle-app-su3k3.ondigitalocean.app/api/news'; // URL of your backend endpoint
 
 function NewsComponent() {
   const [articles, setArticles] = useState([]);
