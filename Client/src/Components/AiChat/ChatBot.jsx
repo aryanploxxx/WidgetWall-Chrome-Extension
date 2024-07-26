@@ -51,7 +51,8 @@ const Chatbot = () => {
 
   return (
     <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
-      <div className="m-4 p-4  w-80">
+      <div className="m-4 w-80">
+        <span className='text-lg poppins-bold'>Chat Bot</span>
         <div className="h-80 overflow-y-scroll mb-4 p-2 border border-gray-300 rounded-lg">
           {messages.map((msg, index) => (
             <div key={index} className={`mb-2 ${msg.sender === 'bot' ? 'text-blue-500' : 'text-green-500'}`}>
