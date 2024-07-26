@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { useEffect, useState } from 'react';
 
 import './App.css'
 
@@ -20,7 +19,7 @@ import CreateIssue from './Components/Issue/CreateIssue';
 import TrackIssue from './Components/Issue/TrackIssue';
 import FloatingEmoji from './Components/FloatingEmoji/FloatingEmoji';
 import Sidebar from './Components/Sidebar/Sidebar';
-import GoogleSlide from './Components/GoogleSlide/GoogleSlide';
+import GoogleSlide from './Components/googleslide/GoogleSlide';
 // eslint-disable-next-line react/prop-types
 
 function App() {
