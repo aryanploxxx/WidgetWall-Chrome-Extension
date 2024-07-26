@@ -14,6 +14,16 @@ import { FaPlusCircle } from "react-icons/fa";
 import { FaCircleMinus } from "react-icons/fa6";
 import Pomodoro from './Components/pomodoro/Pomodoro'
 import Calender from './Components/Calender/Calender';
+import Quote from './Components/Quote/Quote';
+import DailyStepCount from './Components/Steps/DailyStepCount';
+import Sheets from './Components/Sheets/Sheets';
+import Forms from './Components/Forms/Forms';
+import DailyChecklist from './Components/DailyCheckList/DailyCheckList';
+import PollsContainer from './Components/Poll/Poll';
+import NewsComponent from './Components/News/News';
+import Chatbot from './Components/AiChat/ChatBot';
+import CreateIssue from './Components/Issue/CreateIssue';
+import TrackIssue from './Components/Issue/TrackIssue';
 
 
 // eslint-disable-next-line react/prop-types
@@ -41,46 +51,85 @@ const ToggleComponent = ({ componentName }) => {
 
 function App() {
   const components = ['Google Slide', 'Pomodoro Timer', 'Spotify', 'Poll', 'Google Calender', 'Google Sheet', 'Google Form', 'Quote'];
-  const icons = [<FaCircleMinus />, <FaCircleMinus /> ];
+  const icons = [<FaCircleMinus />, <FaCircleMinus />];
   return (
     <div className=''>
       <Navbar />
-      
+
       <div className='mx-10 h-[90vh] pt-10 pb-10 poppins-medium px-5 flex flex-row items-center'>
         {/* Part 1 */}
-        <div className='h-full w-[20%] flex flex-col justify-between items-start pr-5'>
+        <div className='h-full w-[20%] bg-white flex flex-col justify-between items-start mr-5 top-24 left-8 fixed'>
           {/* Listing of components started from here */}
           <div className='w-full'>
-              {components.map((name) => (
-                <ToggleComponent key={name} componentName={name} />
-              ))}
+            {components.map((name) => (
+              <ToggleComponent key={name} componentName={name} />
+            ))}
           </div>
           {/* <div> */}
-            {/* <Pomodoro /> */}
-            {/* <Calender /> */}
+          {/* <Pomodoro /> */}
+          {/* <Calender /> */}
           {/* </div> */}
         </div>
 
         {/* Part 2 */}
-        <div className='h-full w-[80%] flex flex-row flex-wrap gap-5'>
+        <div className='h-full mt-28 ml-[22%] w-[80%] flex flex-row flex-wrap gap-5 rounded-lg'>
           <div className='min-w-[64%] h-[80%] rounded-xl border bg-white'>
             <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSHU5lCgMJ3Akb8ovraVAAX4v31zv9WtbDghTsP2Om2iLCHxj4hxwq0oGrIZ4CtgQgUcn7Dbetzxu6l/embed?start=false&loop=false&delayms=0"
-              className="h-full w-full"
+              className="h-full w-full rounded-lg"
             ></iframe>
           </div>
           {/* <div className='min-w-[32%] h-[80%] rounded-xl border border-purple-600'>p1</div> */}
-          <div className='min-w-[32%] h-[80%] rounded-xl flex flex-col gap-5'>
-          <div className='w-full h-1/2 rounded-xl border-2 border-[#5d7dfc] bg-white overflow-hidden'>
-  <Pomodoro />
-</div>
-              <div className='w-full h-1/2 rounded-xl bg-[#5d7dfc] pl-5 text-white'>
-                  Quote comes here
-              </div>
-
+          <div className='w-[32%] h-[80%] rounded-xl flex flex-col gap-5 justify-between'>
+            <div className='w-full h-1/2 rounded-xl border-2 shadow-lg bg-white overflow-hidden'>
+              <Pomodoro />
+            </div>
+            <div className='w-full h-1/2 rounded-xl bg-[#5d7dfc] text-white'>
+              <Quote />
+            </div>
           </div>
-          <div className='min-w-[50%] h-[80%] rounded-xl border border-[#5d7dfc] bg-white'>Other Widget
-          {/* <MusicPlayer /> */}
-          <Player />
+          <div className='w-[97.7%] flex justify-between'>
+            <div className='w-[32%] p-5 rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <Player />
+            </div>
+            <div className='w-[32%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <DailyChecklist />
+            </div>
+            <div className='w-[33%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <DailyStepCount />
+            </div>
+          </div>
+          <div className='w-[97.7%] flex justify-between'>
+            <div className='w-[32%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <Calender />
+            </div>
+            
+            <div className='w-[66.5%] p-5 rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <Sheets />
+            </div>
+          </div>
+          <div className='w-[97.7%] flex justify-between'>
+            <div className='w-[68%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <Forms />
+            </div>
+            <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <PollsContainer />
+            </div>
+          </div>
+          <div className='w-[97.7%] flex justify-between'>
+            <div className='w-[30%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <Chatbot />
+            </div>
+            <div className='w-[68%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <NewsComponent />
+            </div>
+          </div>
+          <div className='w-[97.7%] flex justify-between'>
+            <div className='w-[49%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <CreateIssue />
+            </div>
+            <div className='w-[49%] rounded-xl border bg-white flex justify-center items-center shadow-lg'>
+              <TrackIssue />
+            </div>
           </div>
         </div>
       </div>

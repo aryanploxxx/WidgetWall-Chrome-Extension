@@ -1,4 +1,4 @@
-.mask-cont {
+/* .mask-cont {
     mask-image: linear-gradient(
         to right,
         hsl(0 0% 0% / 0),
@@ -6,7 +6,7 @@
         hsl(0 0% 0% / 1) 80%,
         hsl(0 0% 0% / 0)
   );
-}
+} */
 
 .navbar {
     position: sticky;

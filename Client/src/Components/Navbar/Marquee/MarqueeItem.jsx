@@ -7,7 +7,8 @@ const MarqueeItem = ({text, from, to }) => {
       <motion.div
         initial={{ x: `${from}` }}
         animate={{ x: `${to}` }}
-        transition={{ duration: 15  , repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        className="text-red-600"
       >
         <span>{text} • </span>
       </motion.div>
