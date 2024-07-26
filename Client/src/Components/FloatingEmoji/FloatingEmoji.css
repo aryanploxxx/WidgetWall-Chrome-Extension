@@ -1,0 +1,41 @@
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  .emoji-popup {
+    position: fixed;
+    bottom: 60px; /* Adjusted to align with the button */
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px; /* Adjusted padding for better alignment */
+    display: flex;
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Center the items horizontally */
+  }
+  
+  .emoji-item {
+    font-size: 24px;
+    margin: 5px 0; /* Vertical margin between emojis */
+    cursor: pointer;
+  }
+  
+  .floating-emoji {
+    position: fixed;
+    animation: float-up 5s linear forwards;
+  }
+  
+  @keyframes float-up {
+    to {
+      top: -50px;
+      opacity: 0;
+    }
+  }
+  
