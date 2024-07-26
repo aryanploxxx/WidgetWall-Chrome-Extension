@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/issues';
+const API_URL = 'https://sea-turtle-app-su3k3.ondigitalocean.app/issues';
 
 const CreateIssue = () => {
   const [title, setTitle] = useState('');
