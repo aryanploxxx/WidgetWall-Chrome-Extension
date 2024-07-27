@@ -19,7 +19,7 @@ import CreateIssue from './Components/Issue/CreateIssue';
 import TrackIssue from './Components/Issue/TrackIssue';
 import FloatingEmoji from './Components/FloatingEmoji/FloatingEmoji';
 import Sidebar from './Components/Sidebar/Sidebar';
-import GoogleSlide from './Components/GoogleSlide/GoogleSlide';
+import GoogleSlides from './Components/GoogleSlides/GoogleSlides';
 // eslint-disable-next-line react/prop-types
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
         <Sidebar />        
 
         <div className='h-full mt-28 ml-[22%] w-[80%] flex flex-row flex-wrap gap-5 rounded-lg'>
-          <GoogleSlide />
+          <GoogleSlides />
           
           <div className='w-[32%] h-[80%] rounded-xl flex flex-col gap-5 justify-between'>
               <Pomodoro />
